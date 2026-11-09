@@ -1,0 +1,14 @@
+AI 101 GROUP 25 : Health Insurance Premium Prediction using Linear Regression
+ 
+Dataset link: https://www.kaggle.com/datasets/mirichoi0218/insurance?utm_source=chatgpt.com
+Libraries used:
+* pandas : 3.1.0
+* numpy : 2.5.4
+* matplot : 3.11.2
+* seaborn : 0.13.2
+* scikit-learn : 3.1.2
+Function used:
+* from sklearn.model_selection we used train_test_split
+*  from sklearn.linear_model we used LinearRegression
+*  from sklearn.metrics we used mean_absolute_error, mean_squared_error, r2_score
+Python : 3.14.7
