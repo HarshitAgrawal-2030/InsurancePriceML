@@ -1,0 +1,9 @@
+# Python 3.12 to 3.14
+pandas==3.0.5
+numpy==2.5.3
+matplotlib==3.11.2
+seaborn==0.13.2
+scikit-learn==1.9.1
+
+# To run the notebook
+notebook>=7.4,<8
