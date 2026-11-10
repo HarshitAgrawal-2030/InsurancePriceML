@@ -204,7 +204,7 @@ The notebook generates the following visualizations:
 
 ## Project Resources
 
-- *Presentation:* [Insurance Premium Prediction – AI101](Insurance_Premium_Prediction_AI101.pptx)
+- *Presentation:* [Insurance Premium Prediction – AI101](Insurance_Premium_Prediction_AI101_1.pptx)
 - *Project Notebook:* [Insurance_Premium_Linear_Regression.ipynb](notebooks/Insurance_Premium_Linear_Regression.ipynb)
 - *Dataset:* [Medical Cost Personal Dataset – Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance)
 - *Project Video:* [Insert Unlisted YouTube or Google Drive Link]
