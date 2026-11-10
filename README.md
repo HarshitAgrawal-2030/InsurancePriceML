@@ -150,6 +150,17 @@ Then select *Run → Run All Cells*.
 
 The notebook prints the dataset shape, training and testing sizes, evaluation metrics, and an example prediction.
 
+## Visualizations
+
+### 1. Distribution of Insurance Charges
+![Charges Distribution](charges_distribution.png)
+
+### 2. Smoker vs Non-smoker Charges
+![Smoker Charges](smoker_charges.png)
+
+### 3. Actual vs Predicted Insurance Charges
+![Actual vs Predicted](actual_vs_predicted.png)
+
 ### Dataset Split
 
 | Dataset      | Number of Records |
@@ -200,10 +211,9 @@ The notebook generates the following visualizations:
 
 ## AI Use Disclosure
 
-*Claude:* Used to assist in creating the presentation slides, README documentation, and requirements.txt based on the project notebook and course briefing.
+The team used generative AI tools as supplementary resources throughout the project:
 
-*Verification:* [Describe how the team reviewed and verified the generated content.]
+- *Google Gemini and Grok:* Used for exploring and refining the project structure, understanding several GitHub commands, and assisting with repository organization.
+- *ChatGPT (GPT):* Used for preparing the initial presentation (PPT), inspecting and understanding code, and providing technical guidance.
 
-*Other AI Tools:* [Mention any other tools used and how their outputs were verified.]
-
-*Dataset and Results:* [Confirm whether AI was used in generating the dataset or model results.]
+AI-generated suggestions were reviewed and adapted by the team. The project implementation, experimentation, model evaluation, and final decisions were carried out and validated by the team.
