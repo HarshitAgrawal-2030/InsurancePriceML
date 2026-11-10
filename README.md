@@ -1,77 +1,209 @@
 # InsurancePriceML
-Predicts a person's health insurance charges from age, BMI, smoking status and other personal details using Linear Regression (pandas, matplotlib, seaborn, scikit-learn).
-AI101 Mini-Project · School of AI and Data Engineering, IIT Ropar · Team [25] · Python 3.12
+### Health Insurance Premium Prediction using Linear Regression
 
-**Team and roles:**
-| Member | Entry no. | GitHub handle | Role |
-| Harshit Agarwal | 2026EEB1353 |[HarshitAgrawal-2030] |https://github.com/HarshitAgrawal-2030|   | Documentation lead |
-| Aryan Hemanth Sawant | 2026MCB1516 | [aryan-s-iitrpr] |https://github.com/aryan-s-iitrpr| | Execution lead |
-| Harshit Bansal | 2026ESB1476 | [HarshitBansal-2008] |https://github.com/HarshitBansal-2008| | PPT lead |
-| Gajjela Sri Charan | 2026AIB1033 | [sricharan-iitrpr] |https://github.com/sricharan-iitrpr|  | Video lead |
-All four members contributed code (see commit history).
+Predicts a person's health insurance charges based on age, BMI, smoking status, and other personal details using Linear Regression.
 
-**Project structure:**
+*AI101 Mini-Project* · School of AI and Data Engineering, IIT Ropar · Team 25 · Python 3.12
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Team Members](#team-members)
+- [Project Structure](#project-structure)
+- [Dataset Description](#dataset-description)
+- [Setup and Installation](#setup-and-installation)
+- [Steps to Run](#steps-to-run)
+- [Expected Output](#expected-output)
+- [Project Resources](#project-resources)
+- [AI Use Disclosure](#ai-use-disclosure)
+
+## Project Overview
+
+This project uses *Linear Regression*, a supervised machine learning algorithm, to predict individual health insurance premiums based on demographic and lifestyle-related features.
+
+### Technologies Used
+
+- Python 3.12
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+
+## Team Members
+
+| Member Name          | Entry Number | GitHub Profile                                   | Role               |
+
+| Harshit Agarwal      | 2026EEB1353  | [GitHub](https://github.com/HarshitAgrawal-2030) | Execution Lead |
+| Aryan Hemant Sawant | 2026MCB1516  | [GitHub](https://github.com/aryan-s-iitrpr)      | video Lead  |
+| Harshit Bansal       | 2026ESB1476  | [GitHub](https://github.com/HarshitBansal-2008)  | PPT Lead   |
+| Gajjela Sri Charan   | 2026AIB1033  | [GitHub](https://github.com/sricharan-iitrpr)    | Documentation Lead  |
+
+*Contribution:* All four team members contributed to the codebase. Refer to the Git commit history for details.
+
+## Project Structure
+
+text
 InsurancePriceML/
+│
 ├── data/
-│   └── insurance.csv                              # Dataset (1,338 rows, 7 columns)
+│   └── insurance.csv
+│
 ├── notebooks/
-│   ├── Insurance_Premium_Linear_Regression.ipynb  # Full pipeline: load, clean, train, evaluate, plot
-│   └── insurance.csv                              # Copy read by the notebook
-├── Insurance_Premium_Prediction_AI101.pptx        # Project slides (5)
-├── expected_output.png                            # Screenshot of a successful run
-├── requirements.txt                               # Pinned library versions
+│   ├── Insurance_Premium_Linear_Regression.ipynb
+│   └── insurance.csv
+│
+├── Insurance_Premium_Prediction_AI101.pptx
+├── expected_output.png
+├── requirements.txt
 ├── .gitignore
 └── README.md
 
-**Dataset:**
-`insurance.csv`, the Medical Cost Personal dataset on Kaggle. It has 1,338 rows and no missing values; the notebook removes 1 duplicate row.
-Column	Description
-`age`	Age of the person
-`sex`	male / female
-`bmi`	Body Mass Index
-`children`	Number of children covered by the insurance
-`smoker`	yes / no
-`region`	northeast, northwest, southeast, southwest
-`charges`	Insurance cost billed, used as the premium (target).
+## Dataset Description
 
-**Setup:**
-Requires Python 3.12 and Git.
-  bash
+The project uses the *Medical Cost Personal Dataset* available on Kaggle.
+
+- Total records: 1,338
+- Total columns: 7
+- Missing values: None
+- Duplicate records: 1 duplicate row removed during preprocessing.
+
+### Dataset Features
+
+| Column     | Description                             |
+
+| age      | Age of the person                       |
+| sex      | Gender (male/female)                    |
+| bmi      | Body Mass Index                         |
+| children | Number of children covered by insurance |
+| smoker   | Smoking status (yes/no)                 |
+| region   | Residential region                      |
+| charges  | Insurance charges (target variable)     |
+
+## Setup and Installation
+
+### Prerequisites
+
+Make sure the following are installed:
+
+- Python 3.12
+- Git
+- Jupyter Notebook
+
+### 1. Clone the Repository
+
+bash
 git clone https://github.com/HarshitAgrawal-2030/InsurancePriceML.git
+
 cd InsurancePriceML
+
+
+### 2. Create a Virtual Environment
+
+bash
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+
+
+### 3. Activate the Virtual Environment
+
+*Windows:*
+
+bash
+venv\Scripts\activate
+
+
+*Linux/macOS:*
+
+bash
+source venv/bin/activate
+
+
+### 4. Install Dependencies
+
+bash
 pip install -r requirements.txt
 
-**Steps to run:**
-Run these commands from the repository folder, with the virtual environment active.
-1.Execute the whole notebook:
-   bash
-   jupyter nbconvert --to notebook --execute notebooks/Insurance_Premium_Linear_Regression.ipynb --output executed_output.ipynb
-   
-2.Open the results and view the printed metrics and plots:
-  bash
-   jupyter notebook notebooks/executed_output.ipynb
-   
-To work interactively instead, run jupyter notebook notebooks/Insurance_Premium_Linear_Regression.ipynb and choose Run > Run All Cells.
-The notebook reads 'insurance.csv' by relative path from the 'notebooks' folder, so keep the two files together.
+## Steps to Run
 
-**Expected output:**
-The notebook prints the dataset shape, the train/test sizes (1,069 / 268) and these test-set metrics, using 'random_state=42':
-| Metric | Test |
-| MAE | 4,177.05 |
-| MSE | 35,478,020.68 |
-| RMSE | 5,956.34 |
-| R² | 0.807 |
-Example prediction (age 30, male, BMI 27.5, 1 child, non-smoker, southeast): 'Predicted insurance premium: 4,710.51'.
-It also draws the charges histogram, the age and smoker charts, an actual vs predicted plot and a residual histogram.
-![Expected output](expected_output.png).
+Make sure you are inside the repository folder and your virtual environment is active.
 
-**Links:**
-Slides: Insurance_Premium_Prediction_AI101.pptx
-Video (max 5:00): [Unlisted YouTube or Drive link]
+### 1. Execute the Complete Notebook
 
-**AI-use disclosure:**
-Claude: created the slides, this README and 'requirements.txt' from our notebook and the course briefing. [How the team checked them]
-[Any other tool: what it did, how you checked it]
-[Confirm: no AI was used to generate the dataset or the results]
+bash
+jupyter nbconvert --to notebook --execute notebooks/Insurance_Premium_Linear_Regression.ipynb --output executed_output.ipynb --output-dir notebooks
+
+### 2. Open the Executed Notebook
+
+bash
+jupyter notebook notebooks/executed_output.ipynb
+
+Alternatively, you can run the original notebook interactively:
+
+bash
+jupyter notebook notebooks/Insurance_Premium_Linear_Regression.ipynb
+
+Then select *Run → Run All Cells*.
+
+*Note:* The notebook reads insurance.csv using a relative path from the notebooks directory. Keep the dataset copy in that directory.
+
+## Expected Output
+
+The notebook prints the dataset shape, training and testing sizes, evaluation metrics, and an example prediction.
+
+### Dataset Split
+
+| Dataset      | Number of Records |
+
+| Training Set |             1,069 |
+| Testing Set  |               268 |
+
+### Model Evaluation Metrics
+
+The following results are obtained on the test set using random_state=42.
+
+| Evaluation Metric              |   Test Result |
+
+| Mean Absolute Error (MAE)      |      4,177.05 |
+| Mean Squared Error (MSE)       | 35,478,020.68 |
+| Root Mean Squared Error (RMSE) |      5,956.34 |
+| R² Score                       |         0.807 |
+
+### Example Prediction
+
+*Input:*
+
+- Age: 30
+- Sex: Male
+- BMI: 27.5
+- Children: 1
+- Smoker: No
+- Region: Southeast
+
+*Predicted Insurance Premium:* 4,710.51
+
+### Visualizations
+
+The notebook generates the following visualizations:
+
+- Distribution of insurance charges (Histogram)
+- Age-based analysis
+- Smoking status analysis
+- Actual vs. Predicted values
+- Residual distribution (Histogram)
+
+## Project Resources
+
+- *Presentation:* [Insurance Premium Prediction – AI101](Insurance_Premium_Prediction_AI101.pptx)
+- *Project Notebook:* [Insurance_Premium_Linear_Regression.ipynb](notebooks/Insurance_Premium_Linear_Regression.ipynb)
+- *Dataset:* [Medical Cost Personal Dataset – Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance)
+- *Project Video:* [Insert Unlisted YouTube or Google Drive Link]
+
+## AI Use Disclosure
+
+*Claude:* Used to assist in creating the presentation slides, README documentation, and requirements.txt based on the project notebook and course briefing.
+
+*Verification:* [Describe how the team reviewed and verified the generated content.]
+
+*Other AI Tools:* [Mention any other tools used and how their outputs were verified.]
+
+*Dataset and Results:* [Confirm whether AI was used in generating the dataset or model results.]
